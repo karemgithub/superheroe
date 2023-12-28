@@ -1,0 +1,17 @@
+<div class="text-center mb-3 pb-3">
+    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Paquete</h6>
+    <h1>Super-Heroes</h1>
+    <div class="card-group">
+        <div class="card">
+
+
+            @for (sh of superheroes; track sh; let i = $index)
+            {
+            <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
+            }
+
+
+        </div>
+    </div>
+
+</div>

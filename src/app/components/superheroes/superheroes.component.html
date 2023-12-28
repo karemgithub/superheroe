@@ -1,0 +1,30 @@
+<!-- <div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">       
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item position-relative overflow-hidden mb-2">
+                    <img class="img-fluid" [src]="Superheroe.imagen" alt="">
+                    <a class="destination-overlay text-white text-decoration-none" href="">
+                        <h1 class="text-white">{{Superheroe.superheroe}}</h1>
+                        <span>{{Superheroe.editor}}</span>
+                    </a>
+                </div>
+            </div>                       
+        </div>
+    </div>
+</div>  -->
+<a [routerLink]="['/detallesReceta',indice]" class="list-group-item" style="cursor: pointer;">
+    <ol class="list-group ">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                {{Superheroe.id}}
+                <img [src]="Superheroe.imagen " class="img-responsive" style="max-height: 50px;">
+                {{Superheroe.superheroe}}. {{Superheroe.editor}}
+            </div>
+            <button class="btn btn-primary">Editar</button>
+
+            <span class="badge bg-primary rounded-pill"></span>
+            <button class="btn btn-primary">Eliminar</button>
+        </li>
+    </ol>
+</a>

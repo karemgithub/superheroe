@@ -1,0 +1,204 @@
+{
+  "Superheroes": [
+    {
+      "id": 1,
+      "superheroe": "Batman",
+      "editor": "DC Comics",
+      "actor_principal": "Bruce Wayne",
+      "tematica": "Detective Comics #27",
+      "personajes": "Bruce Wayne",
+      "imagen": "assets/batman.png",
+      "descripcion": "Batman es un hombre alto, caucásico, tiene una figura oscura e imponente, posee con cabello negro corto y ojos marrones. Él lleva un traje gris oscuro con el símbolo negro de un murciélago, en medio de el pecho. Batman también usa una capucha negra que lo cubre en todo momento para ocultar su identidad"
+    },
+    {
+      "id": 2,
+      "superheroe": "Superman",
+      "editor": "DC Comics",
+      "actor_principal": "Kal-El",
+      "tematica": "Action Comics #1",
+      "personajes": "Kal-El",
+      "imagen": "assets/Superman.jpg",
+      "descripcion": "Superman es un hombre alto, musculoso, hombre de raza blanca con ojos azules y pelo negro corto con un rizo. Superman, siempre lleva su uniforme azul con su famoso rojo y amarillo escudo de S en el pecho, un cinturón amarillo, botas rojas y una capa roja."
+    },
+    {
+      "id": 3,
+      "superheroe": "Flash",
+      "editor": "DC Comics",
+      "actor_principal": "Jay Garrick",
+      "tematica": "Flash Comics #1",
+      "personajes": "Jay Garrick, Barry Allen, Wally West, Bart Allen",
+      "imagen": "assets/Flash.jpg",
+      "descripcion": "Flash (también conocido por su apodo El Velocista Escarlata) es un superhéroe de DC Comics que posee una rapidez sobrehumana, la cual incluye la habilidad de correr a gran velocidad, reflejos sobrehumanos y la capacidad de violar algunas leyes de la física."
+    },
+    {
+      "id": 4,
+      "superheroe": "Green Lantern",
+      "editor": "DC Comics",
+      "actor_principal": "Alan Scott",
+      "tematica": "All-American Comics #16",
+      "personajes": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz",
+      "imagen": "assets/Green_Lantern.jpg",
+      "descripcion": "Como un Linterna Verde, Jordan es semi-invulnerable, capaz de proyectar construcciones sólidas de luz, volar, y utilizar varias otros recursos a través de su anillo de poder, sólo limitados por su imaginación y fuerza de voluntad. Jordan como un Linterna Verde tiene una fuerza de voluntad excepcional."
+    },
+    {
+      "id": 5,
+      "superheroe": "Green Arrow",
+      "editor": "DC Comics",
+      "actor_principal": "Oliver Queen",
+      "tematica": "More Fun Comics #73",
+      "personajes": "Oliver Queen",
+      "imagen": "assets/Green_Arrow.jpg",
+      "descripcion": "Flecha Verde es un superhéroe justiciero que lucha contra el crimen con las artes marciales, tiro con arco y tecnología. En su identidad secreta es Oliver Queen, que vive en Cuidad Estrella como un rico playboy multimillonario y empresario convertido en político liberal franco."
+    },
+    {
+      "id": 6,
+      "superheroe": "Wonder Woman",
+      "editor": "DC Comics",
+      "actor_principal": "Princess Diana",
+      "tematica": "All Star Comics #8",
+      "personajes": "Princess Diana",
+      "imagen": "assets/Wonder_Woman.jpg",
+      "descripcion": "Mujer Maravilla es una mujer delgada con el pelo largo negro al hombro y ojos azules, de entre las a amazonas y cualquier mujer sobresalta su belleza por poseer la apariencia de diosa como Afrodita. Lleva una blusa sin tirantes de color rojo sostenida por un par de oro que parecen dos de W."
+    },
+    {
+      "id": 7,
+      "superheroe": "Martian Manhunter",
+      "editor": "DC Comics",
+      "actor_principal": "J'onn J'onzz",
+      "tematica": "Detective Comics #225",
+      "personajes": "Martian Manhunter",
+      "imagen": "assets/Martian_Manhunter.jpg",
+      "descripcion": "Martian Manhunter es el telépata más poderoso del planeta y uno de los seres telepáticos más fuertes del Universo. Es capaz de leer la mente de cualquier humano sin dificultades, y las únicas mentes que pueden causarle problemas son las mentes locas. Incluso puede leer la mente subconsciente también."
+    },
+    {
+      "id": 8,
+      "superheroe": "Robin Nightwing",
+      "editor": "DC Comics",
+      "actor_principal": "Dick Grayson",
+      "tematica": "Detective Comics #38",
+      "personajes": "Dick Grayson",
+      "imagen": "assets/Robin_Nightwing.jpg",
+      "descripcion": "Como Nightwing es serio, grave y calculador, más parecido ahora como su antiguo mentor, Batman. Y es nombrado líder de El Equipo responsable de dar las misiones y formar los equipos."
+    },
+    {
+      "id": 9,
+      "superheroe": "Blue Beetle",
+      "editor": "DC Comics",
+      "actor_principal": "Dan Garret",
+      "tematica": "Mystery Men Comics #1",
+      "personajes": "Dan Garret, Ted Kord, Jaime Reyes",
+      "imagen": "assets/Blue_Betlee.jpg",
+      "descripcion": "Blue Beetle no solo puede crear objetos, sino que también puede hacer todo tipo de armas de energía, como escudos e incluso espadas. También es un cambiador de forma, lo que le permite ajustarse a muchos lugares y situaciones para salir airoso (o al menos, intentarlo)."
+    },
+    {
+      "id": 10,
+      "superheroe": "Black Canary",
+      "editor": "DC Comics",
+      "actor_principal": "Dinah Drake",
+      "tematica": "Flash Comics #86",
+      "personajes": "Dinah Drake, Dinah Lance",
+      "imagen": "assets/Black_Canary.jpg",
+      "descripcion": "Lance es una de las dos mujeres bajo el alias Canario Negro dentro del Universo DC; es la hija de Dinah Drake y sucesora del manto de superhéroe en las narrativas post-crisis. "
+    },
+    {
+      "id": 11,
+      "superheroe": "Spider Man",
+      "editor": "Marvel Comics",
+      "actor_principal": "Peter Parker",
+      "tematica": "Amazing Fantasy #15",
+      "personajes": "Peter Parker",
+      "imagen": "assets/Spider_Man.jpg",
+      "descripcion": "Fuerza, velocidad, durabilidad, agilidad, sentidos, reflejos, coordinación, equilibrio y resistencia sobrehumanos. "
+    },
+    {
+      "id": 12,
+      "superheroe": "Captain America",
+      "editor": "Marvel Comics",
+      "actor_principal": "Steve Rogers",
+      "first_appearance": "Captain America Comics #1",
+      "personajes": "Steve Rogers",
+      "imagen": "assets/Captain_America.jpg",
+      "descripcion": "El personaje es generalmente representado como el alter ego de Steve Rogers, un joven frágil mejorado a la cima de la perfección humana por un suero experimental S.S.S. (Suero supersoldado) para ayudar a los esfuerzos inminentes del gobierno de Estados Unidos en la Segunda Guerra Mundial"
+    },
+    {
+      "id": 13,
+      "superheroe": "Iron Man",
+      "editor": "Marvel Comics",
+      "actor_principal": "Tony Stark",
+      "tematica": "Tales of Suspense #39",
+      "personajes": "Tony Stark",
+      "imagen": "assets/Iron_Man.jpg",
+      "descripcion": "Tony Stark es un genio, multimillonario, playboy y filántropo. Él no solo inventó la Armadura de Iron Man, sino que se vistió la misma. Él es el ingenioso codirector y uno de los miembros fundadores de los Vengadores."
+    },
+    {
+      "id": 14,
+      "superheroe": "Thor",
+      "editor": "Marvel Comics",
+      "actor_principal": "Thor Odinson",
+      "tematica": "Journey into Myster #83",
+      "personajes": "Thor Odinson",
+      "imagen": "assets/Thor.jpg",
+      "descripcion": "Thor, es un superhéroe y príncipe-guerrero de Asgard, dios del trueno, y protector de la tierra, y de los 9 reinos. Él empuña un martillo, el cual solo podrá ser levantado por alguien que “sea digno de él, el cual obtendrá el poder de thor”. Thor-fis protector de los valores éticos."
+    },
+    {
+      "id": 15,
+      "superheroe": "Hulk",
+      "editor": "Marvel Comics",
+      "actor_principal": "Bruce Banner",
+      "tematica": "The Incredible Hulk #1",
+      "personajes": "Bruce Banner",
+      "imagen": "assets/Hulk.jpg",
+      "descripcion": "En sus apariciones de cómic, el personaje es a la vez Hulk, un ser humanoide enorme de piel verde, corpulento y musculoso que posee una gran fortaleza física, y su alter ego el Dr. Robert Bruce Banner (o Dr. David Bruce Banner), un físico socialmente retraído, débil físicamente y emocionalmente reservado"
+    },
+    {
+      "id": 16,
+      "superheroe": "Wolverine",
+      "editor": "Marvel Comics",
+      "actor_principal": "James Howlett",
+      "tematica": "The Incredible Hulk #180",
+      "personajes": "James Howlett",
+      "imagen": "assets/Wolverine.png",
+      "descripcion": "Es un mutante que posee sentidos afinados a los animales, capacidades físicas mejoradas, poderosa capacidad de regeneración conocida como un factor de curación, y tres garras retráctiles en cada mano. Wolverine ha sido representado de diversas formas como miembro de los X-Men, Alpha Flight, Fuerza-X y Los Vengadores."
+    },
+    {
+      "id": 17,
+      "superheroe": "Daredevil",
+      "editor": "Marvel Comics",
+      "actor_principal": "Matthew Michael Murdock",
+      "tematica": "Daredevil #1",
+      "personajes": "Matthew Michael Murdock",
+      "imagen": "assets/Daredevil.jpg",
+      "descripcion": "Personalidad. Daredevil es un héroe moralmente justo con un fuerte sentido de la ley y la justicia. Esto también le ha influido a convertirse en un abogado. Daredevil se opone a la violencia total, y prefiere mantener vivos y derrotar a sus enemigos en lugar de matarlos."
+    },
+    {
+      "id": 18,
+      "superheroe": "Hawkeye",
+      "editor": "Marvel Comics",
+      "actor_principal": "Clinton Francis Barton",
+      "tematica": "Tales of Suspense #57",
+      "personajes": "Clinton Francis Barton",
+      "imagen": "assets/Hawkeye.jpg",
+      "descripcion": "Hawkeye era un antiguo trabajador del circo y un criminal convertido en héroe, que recibió sus habilidades de arquero cuando era joven a través del entrenamiento con Swordsman y Trickshot. Barton acabaría uniéndose a las ramas de los Vengadores de la Costa Este y de la Costa Oeste, e incluso llegó a liderarlas"
+    },
+    {
+      "id": 19,
+      "superheroe": "Cyclops",
+      "editor": "Marvel Comics",
+      "actor_principal": "Scott Summers",
+      "tematica": "X-Men #1",
+      "personajes": "Scott Summers",
+      "imagen": "assets/Cyclops.png",
+      "descripcion": " Cíclope es un mutante con la capacidad de proyectar potentes explosiones de fuerza a través de sus ojos. Es visualmente distintivo su visor de rubí de cuarzo,  que le confiere el nombre clave de Cyclops (Cíclope)"
+    },
+    {
+      "id": 20,
+      "superheroe": "Silver Surfer",
+      "editor": "Marvel Comics",
+      "actor_principal": "Norrin Radd",
+      "tematica": "The Fantastic Four #48",
+      "personajes": "Norrin Radd",
+      "imagen": "assets/Silver_Surfer.jpg",
+      "descripcion": "El Silver Surfer es uno de los Miembros del Escuadrón de Superhéroes, y el Factor Energía de el Mismo. Aparecio por primera vez en el Episodio Un piloto vendrá. El es el único extraterrestre del escuadrón, por lo que le cuesta adaptarse a la Tierra. Sus ataques generalmente consisten en Energía Cósmica."
+    }
+  ]
+}
