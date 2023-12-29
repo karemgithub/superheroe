@@ -1,15 +1,31 @@
+<br>
+<div class="input-group mb-2">
+<input type="text" class="form-control" placeholder="Buscar Superheroe" [(ngModel)]="buscarsh"  
+#textBuscar (keyup)="BuscarSH(textBuscar.value)">
+<span class="input-group-text">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" style="max-width: 5xp;">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+</span>
+</div>
 <div class="text-center mb-3 pb-3">
     <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Paquete</h6>
     <h1>Super-Heroes</h1>
     <div class="card-group">
         <div class="card">
 
+            <ul class="list-group">
+                <!--    -->
+                <li *ngFor="let sh of superheroes | filtrarSH: buscarsh">
 
-            @for (sh of superheroes; track sh; let i = $index)
+                    <app-superheroes [Superheroe]="sh"></app-superheroes>
+                </li>
+
+            </ul>
+            <!-- @for (sh of superheroes; track sh; let i = $index)
             {
             <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
-            }
-
+            } -->
 
         </div>
     </div>
