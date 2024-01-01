@@ -102,7 +102,7 @@ export class AgragarSHComponent implements OnInit {
   formSH = this.fb.group({
     "superheroe": ['', Validators.required],
     "editor": ['', Validators.required],
-    "actor_principal": ['', Validators.required],
+    "actorprincipal": ['', Validators.required],
     "tematica": ['', Validators.required],
     "personajes": ['', Validators.required],
     "imagen": ['', Validators.required],
@@ -117,8 +117,8 @@ export class AgragarSHComponent implements OnInit {
     return this.formSH.get('editor') as FormControl;
   }
 
-  get actor_principal(): FormControl {
-    return this.formSH.get('actor_principal') as FormControl;
+  get actorprincipal(): FormControl {
+    return this.formSH.get('actorprincipal') as FormControl;
   }
 
   get tematica(): FormControl {

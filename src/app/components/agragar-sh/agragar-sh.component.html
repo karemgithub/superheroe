@@ -5,64 +5,72 @@
     <br>
     <form [formGroup]="formSH">
       <div class="mb-3">
-        <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1" formControlName="superheroe">
-        <br>
+        <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1"
+          formControlName="superheroe">
         <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
-        El nombre del SuperHeroe es obligarorio
-      </div>
+          El nombre del SuperHeroe es obligarorio
+        </div>
       </div>
 
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="imagen">
-        <span class="input-group-text">Imagen</span>
+      <div class=" mb-3">
+        <input type="text" class="form-control" placeholder="imagen" formControlName="imagen">
+        <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
+          El la imagen es obligaroria
+        </div>
       </div>
       <!-- <div>
     <img [src]="archivos[0]" alt="imagen">
   </div> -->
 
-      <div class="input-group mb-3">
-
-        <select class="form-select" aria-label="Default select example">
+      <!-- <div class=" mb-3">
+        <select class="form-select" aria-label="Default select example" formControlName="editor">
           <option selected>Seleccione el editor</option>
           <option value="1">Marvel Comics</option>
           <option value="2">DC Comics</option>
         </select>
+        <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
+          Debe seleccionar un editor
+        </div>
+      </div> -->
+
+      <div class=" mb-3">
+        <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
+          aria-describedby="basic-addon1">
+        <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
+          Debe especificar Marvel Comics ó DC Comics
+        </div>
       </div>
 
-      <!-- <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">Editor</span>
-    <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" 
-      aria-describedby="basic-addon1">
-  </div> -->
-
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1">
+      <div class=" mb-3">
+        <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1"
+          formControlName="actorprincipal">
+        <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
+          El actor es obligatorio
+        </div>
       </div>
 
-      <div class="input-group mb-3">
-       
-        <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1">
+      <div class=" mb-3">
+        <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1"
+          formControlName="tematica">
+        <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
+          La temática es obligatoria
+        </div>
       </div>
 
 
-      <div class="input-group mb-3">
-     
+      <div class=" mb-3">
         <input type="text" class="form-control" placeholder="personajes" aria-describedby="basic-addon1">
+
       </div>
 
-      <!-- <select class="form-select"    aria-label="Default select example">
-    <option selected>Editor</option>
-    <option [value]="editor.editor" *ngFor="let editor of superheroes">
-      {{editor.editor}}
-    </option>
- 
-  </select> -->
 
-      <div class="input-group">
-
-        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"></textarea>
+      <div class=" mb-3">
+        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"
+          formControlName="descripcion"></textarea>
+        <div class="alert alert-danger mt-2" [hidden]="descripcion.valid || descripcion.pristine">
+          La descripción es obligatoria
+        </div>
       </div>
-
     </form>
   </div>
   <div class="example-button-container">
