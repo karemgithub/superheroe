@@ -9,11 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-listado-super-heroe',
   standalone: true,
-  imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe,  MatIconModule, MatDividerModule, MatButtonModule, FormsModule],
+  imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule, 
+    FormsModule, CdkDropList, CdkDrag, RouterLink],
   templateUrl: './listado-super-heroe.component.html',
   styleUrl: './listado-super-heroe.component.css'
 })
@@ -38,5 +42,10 @@ export class ListadoSuperHeroeComponent {
   BuscarSH(buscar: string) {
     this.buscarsh = buscar;
   }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.superheroes, event.previousIndex, event.currentIndex);
+  }
+
 
 }

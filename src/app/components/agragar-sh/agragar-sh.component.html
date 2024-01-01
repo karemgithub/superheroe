@@ -1,0 +1,75 @@
+<div class="container">
+  <br>
+  <div class="text-center mb-3 pb-3">
+    <h1>Agregar SuperHeroe</h1>
+    <br>
+    <form [formGroup]="formSH">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1" formControlName="superheroe">
+        <br>
+        <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
+        El nombre del SuperHeroe es obligarorio
+      </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="imagen">
+        <span class="input-group-text">Imagen</span>
+      </div>
+      <!-- <div>
+    <img [src]="archivos[0]" alt="imagen">
+  </div> -->
+
+      <div class="input-group mb-3">
+
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Seleccione el editor</option>
+          <option value="1">Marvel Comics</option>
+          <option value="2">DC Comics</option>
+        </select>
+      </div>
+
+      <!-- <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Editor</span>
+    <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" 
+      aria-describedby="basic-addon1">
+  </div> -->
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+       
+        <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1">
+      </div>
+
+
+      <div class="input-group mb-3">
+     
+        <input type="text" class="form-control" placeholder="personajes" aria-describedby="basic-addon1">
+      </div>
+
+      <!-- <select class="form-select"    aria-label="Default select example">
+    <option selected>Editor</option>
+    <option [value]="editor.editor" *ngFor="let editor of superheroes">
+      {{editor.editor}}
+    </option>
+ 
+  </select> -->
+
+      <div class="input-group">
+
+        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"></textarea>
+      </div>
+
+    </form>
+  </div>
+  <div class="example-button-container">
+    <button mat-raised-button color="accent">Agregar</button>
+  </div>
+</div>
+
+<!-- <div class="example-button-row">
+  <button mat-raised-button>Agregar SuperHeroe</button>
+</div> -->

@@ -6,12 +6,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
+
+
+
 
 
 @Component({
   selector: 'app-superheroes',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, MatDividerModule, MatButtonModule],
+  imports: [CommonModule, RouterLink, MatIconModule, MatDividerModule, MatButtonModule, MatListModule],
   templateUrl: './superheroes.component.html',
   styleUrl: './superheroes.component.css'
 })
@@ -23,6 +32,8 @@ export class SuperheroesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+
 
 }
 
