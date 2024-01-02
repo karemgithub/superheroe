@@ -19,4 +19,21 @@ export class ServiceSHService {
     obs$.subscribe(data => { this.sh = data });
     return obs$;
   }
+
+  postSuperHeroe(shNew: Superheroe): void {
+
+    this.http.post<Superheroe>(this.url,
+      {
+        'id': 0,
+        'superheroe': shNew.superheroe,
+        'editor': shNew.editor,
+        'actor_principal': shNew.actor_principal,
+        'tematica': shNew.tematica,
+        'imagen': shNew.imagen,
+        'personajes': shNew.personajes          
+      }).subscribe(data=>{shNew = data });
+
+    
+  }
+
 }

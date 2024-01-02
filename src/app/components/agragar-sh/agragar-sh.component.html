@@ -18,21 +18,7 @@
           El la imagen es obligaroria
         </div>
       </div>
-      <!-- <div>
-    <img [src]="archivos[0]" alt="imagen">
-  </div> -->
-
-      <!-- <div class=" mb-3">
-        <select class="form-select" aria-label="Default select example" formControlName="editor">
-          <option selected>Seleccione el editor</option>
-          <option value="1">Marvel Comics</option>
-          <option value="2">DC Comics</option>
-        </select>
-        <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
-          Debe seleccionar un editor
-        </div>
-      </div> -->
-
+  
       <div class=" mb-3">
         <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
           aria-describedby="basic-addon1">
@@ -63,18 +49,11 @@
 
       </div>
 
-
-      <div class=" mb-3">
-        <textarea class="form-control" aria-label="With textarea" placeholder="Descripción"
-          formControlName="descripcion"></textarea>
-        <div class="alert alert-danger mt-2" [hidden]="descripcion.valid || descripcion.pristine">
-          La descripción es obligatoria
-        </div>
-      </div>
+    
     </form>
   </div>
   <div class="example-button-container">
-    <button mat-raised-button color="accent">Agregar</button>
+    <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()">Agregar</button>
   </div>
 </div>
 

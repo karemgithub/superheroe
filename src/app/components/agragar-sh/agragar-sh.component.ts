@@ -42,7 +42,7 @@ export class AgragarSHComponent implements OnInit {
 
   ngOnInit(): void {
     this.CargarDatosSH();
-    this.MostrarEditor();
+
   }
 
   CargarDatosSH() {
@@ -51,62 +51,14 @@ export class AgragarSHComponent implements OnInit {
     obs$.subscribe(data => { this.superheroes = data });
   }
 
-  MostrarEditor(): number[] {
-    let tipo: string[] = [];
-    for (let i = 0; i < this.superheroes.length; i++) {
-      tipo[i] = this.superheroes[i].editor;
-    }
-    let Leditor = new Set(tipo);
-    this.listaEditor = Array.from(Leditor.values());
-    // recorro el tamaño de la lista de los superheroes
-    for (let i = 0; i < this.listaEditor.length; i++) {
-      let contador = 0;
-      for (let j = 0; j < this.superheroes.length; j++) {
-        if (this.listaEditor[i] == this.superheroes[j].editor) {
-          contador++;
-        }
-      }
-      //this.aux.push(contador / this.superheroes.length);
-    }
-    //alert(this.aux);
-    return this.aux;
-  }
-
-
-  // CapturarImagen(event: any) {
-  //   const capturarImagen = event.taget.files;
-
-  //   this.extraerBase64(capturarImagen).then((imagen: any) => {
-  //     console.log(imagen)
-  //   });
-  //    this.archivos.push(capturarImagen);
-
-  // }
-
-  // extraerBase64 = async ($event: any) => new Promise((resolve, rejects) => {
-  //   try {
-  //     const unsafImg = window.URL.createObjectURL($event);
-  //     const image = this.sanitizer.bypassSecurityTrustUrl(unsafImg);
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL($event);
-  //     reader.onload = () => {
-  //       resolve({
-  //         base: null
-  //       });
-  //     };
-  //   } catch (e) {
-  //     return null;
-  //   }
-  // })
-
   formSH = this.fb.group({
     "superheroe": ['', Validators.required],
     "editor": ['', Validators.required],
     "actorprincipal": ['', Validators.required],
     "tematica": ['', Validators.required],
     "personajes": ['', Validators.required],
-    "imagen": ['', Validators.required],
-    "descripcion": ['', Validators.required]
+    "imagen": ['', Validators.required]
+
   })
 
   get superheroe(): FormControl {
@@ -133,8 +85,12 @@ export class AgragarSHComponent implements OnInit {
     return this.formSH.get('personajes') as FormControl;
   }
 
-  get descripcion(): FormControl {
-    return this.formSH.get('descripcion') as FormControl;
+  AgregarSuperHeroe() {
+    let superh = new Superheroe(0, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
+    this.servicioSH.postSuperHeroe(superh);
+    alert(console.log(superh))
   }
+
+
 
 }
