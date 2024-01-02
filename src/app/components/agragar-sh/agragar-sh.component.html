@@ -49,6 +49,6 @@
     </div>
     <div class="example-button-container">
         <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()"
-            [routerLink]="['/mostrarSH']">Agregar</button>
+            [routerLink]="['/mostrarSH']" [disabled]="formSH.invalid" >Agregar</button>
     </div>
 </div>
