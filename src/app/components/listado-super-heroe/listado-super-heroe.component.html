@@ -3,6 +3,7 @@
     <div class="input-group mb-2">
         <input type="text" class="form-control" placeholder="Buscar Superheroe" [(ngModel)]="buscarsh" #textBuscar
             (keyup)="BuscarSH(textBuscar.value)">
+
         <span class="input-group-text">
             <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon"
                 style="max-width: 2xp;">
@@ -26,8 +27,8 @@
 
             <div class="card">
                 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    @for (sh of superheroes; track sh) {
-                    <app-superheroes [Superheroe]="sh"></app-superheroes>
+                    @for (sh of superheroes; track sh; let i = $index ) {
+                    <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
                     }
                 </div>
 

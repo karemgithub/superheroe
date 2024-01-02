@@ -13,12 +13,24 @@
       </div>
 
       <div class=" mb-3">
-        <input type="text" class="form-control" placeholder="imagen" formControlName="imagen">
+        <input type="text" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen">
+
+        <script>
+          const fileInput=document.getElementById("fileInput");
+          fileInput.addEventListener("change", e => {
+            const file = fileInput.file[0];
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+              console.log(reader.result);
+            });
+            reader.readAsDataURL(file);
+          });
+        </script>
         <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
           El la imagen es obligaroria
         </div>
       </div>
-  
+
       <div class=" mb-3">
         <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
           aria-describedby="basic-addon1">
@@ -49,11 +61,11 @@
 
       </div>
 
-    
+
     </form>
   </div>
   <div class="example-button-container">
-    <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()">Agregar</button>
+    <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()" [routerLink]="['/mostrarSH']">Agregar</button>
   </div>
 </div>
 

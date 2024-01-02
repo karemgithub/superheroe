@@ -14,14 +14,18 @@ import { Observable } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+
+import Swal from 'sweetalert2';
+
 
 
 @Component({
   selector: 'app-agragar-sh',
   standalone: true,
   imports: [CommonModule, MatSelectModule, MatInputModule, MatFormFieldModule, MatIconModule, MatDividerModule, MatButtonModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule, RouterLink],
   templateUrl:
     './agragar-sh.component.html',
 
@@ -88,9 +92,17 @@ export class AgragarSHComponent implements OnInit {
   AgregarSuperHeroe() {
     let superh = new Superheroe(0, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
     this.servicioSH.postSuperHeroe(superh);
-    alert(console.log(superh))
+   this.Mensaje();
   }
 
-
+Mensaje(){
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "SuperHeroe agregado satisfactoriamente",
+    showConfirmButton: false,
+    timer: 1500
+  });
+}
 
 }
