@@ -244,6 +244,15 @@
       "tematica": "sfeg",
       "imagen": "sfsf",
       "personajes": ""
+    },
+    {
+      "id": 26,
+      "superheroe": "",
+      "editor": "",
+      "actor_principal": "",
+      "tematica": "",
+      "imagen": "",
+      "personajes": ""
     }
   ]
 }

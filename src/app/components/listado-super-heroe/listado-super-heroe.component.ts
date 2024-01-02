@@ -12,16 +12,20 @@ import { FormsModule } from '@angular/forms';
 import { CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Router } from 'express';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-listado-super-heroe',
   standalone: true,
   imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule, 
-    FormsModule, CdkDropList, CdkDrag, RouterLink],
+    FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule],
   templateUrl: './listado-super-heroe.component.html',
   styleUrl: './listado-super-heroe.component.css'
 })
 export class ListadoSuperHeroeComponent {
+
+  p: number = 1;
+
   Superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
   superheroes: Superheroe[] = []
 

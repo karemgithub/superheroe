@@ -1,74 +1,54 @@
 <div class="container">
-  <br>
-  <div class="text-center mb-3 pb-3">
-    <h1>Agregar SuperHeroe</h1>
     <br>
-    <form [formGroup]="formSH">
-      <div class="mb-3">
-        <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1"
-          formControlName="superheroe">
-        <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
-          El nombre del SuperHeroe es obligarorio
-        </div>
-      </div>
+    <div class="text-center mb-3 pb-3">
+        <h1>Agregar SuperHeroe</h1>
+        <br>
+        <form [formGroup]="formSH">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1"
+                    formControlName="superheroe">
+                <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
+                    El nombre del SuperHeroe es obligarorio
+                </div>
+            </div>
 
-      <div class=" mb-3">
-        <input type="text" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen">
+            <div class=" mb-3">
+                <input type="text" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen">
+                <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
+                    El la imagen es obligaroria
+                </div>
+            </div>
 
-        <script>
-          const fileInput=document.getElementById("fileInput");
-          fileInput.addEventListener("change", e => {
-            const file = fileInput.file[0];
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-              console.log(reader.result);
-            });
-            reader.readAsDataURL(file);
-          });
-        </script>
-        <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
-          El la imagen es obligaroria
-        </div>
-      </div>
+            <div class=" mb-3">
+                <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
+                    aria-describedby="basic-addon1">
+                <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
+                    Debe especificar Marvel Comics ó DC Comics
+                </div>
+            </div>
 
-      <div class=" mb-3">
-        <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
-          aria-describedby="basic-addon1">
-        <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
-          Debe especificar Marvel Comics ó DC Comics
-        </div>
-      </div>
+            <div class=" mb-3">
+                <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1"
+                    formControlName="actorprincipal">
+                <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
+                    El actor es obligatorio
+                </div>
+            </div>
 
-      <div class=" mb-3">
-        <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1"
-          formControlName="actorprincipal">
-        <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
-          El actor es obligatorio
-        </div>
-      </div>
-
-      <div class=" mb-3">
-        <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1"
-          formControlName="tematica">
-        <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
-          La temática es obligatoria
-        </div>
-      </div>
-
-
-      <div class=" mb-3">
-        <input type="text" class="form-control" placeholder="personajes" aria-describedby="basic-addon1">
-
-      </div>
-
-
-    </form>
-  </div>
-  <div class="example-button-container">
-    <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()" [routerLink]="['/mostrarSH']">Agregar</button>
-  </div>
+            <div class=" mb-3">
+                <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1"
+                    formControlName="tematica">
+                <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
+                    La temática es obligatoria
+                </div>
+            </div>
+            <div class=" mb-3">
+                <input type="text" class="form-control" placeholder="personajes" aria-describedby="basic-addon1">
+            </div>
+        </form>
+    </div>
+    <div class="example-button-container">
+        <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()"
+            [routerLink]="['/mostrarSH']">Agregar</button>
+    </div>
 </div>
-
-<!-- <div class="example-button-row">
-  <button mat-raised-button>Agregar SuperHeroe</button>
-</div> -->

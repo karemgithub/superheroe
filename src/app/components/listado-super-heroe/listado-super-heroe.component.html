@@ -12,8 +12,8 @@
         </span>
     </div>
     <!--  -->
-
-    <div class="container"></div>
+    <!-- 
+    <div class="container"> -->
     <div class="text-center mb-3 pb-3">
         <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Paquete</h6>
         <h1>Super-Heroes</h1>
@@ -24,15 +24,23 @@
             </button>
         </div>
         <div class="card-group">
-
             <div class="card">
-                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    @for (sh of superheroes; track sh; let i = $index ) {
-                    <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
-                    }
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh">
+                        <app-superheroes [Superheroe]="sh"></app-superheroes>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+</div>
 
-                <!-- <ul class="list-group">
+
+<!-- <ul class="list-group">
                
                 <li *ngFor="let sh of superheroes | filtrarSH: buscarsh">
 
@@ -40,13 +48,15 @@
                 </li>
 
             </ul> -->
-                <!-- @for (sh of superheroes; track sh; let i = $index)
+<!-- @for (sh of superheroes; track sh; let i = $index)
             {
             <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
             } -->
 
-            </div>
-        </div>
 
-    </div>
-</div>
+
+<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                    @for (sh of superheroes; track sh; let i = $index ) {
+                    <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
+                    }
+                </div> -->

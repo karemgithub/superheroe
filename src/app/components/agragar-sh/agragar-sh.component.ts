@@ -18,6 +18,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { RouterLink } from '@angular/router';
 
 import Swal from 'sweetalert2';
+import { HtmlParser } from '@angular/compiler';
 
 
 
@@ -92,17 +93,29 @@ export class AgragarSHComponent implements OnInit {
   AgregarSuperHeroe() {
     let superh = new Superheroe(0, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
     this.servicioSH.postSuperHeroe(superh);
-   this.Mensaje();
+    this.Mensaje();
   }
 
-Mensaje(){
-  Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "SuperHeroe agregado satisfactoriamente",
-    showConfirmButton: false,
-    timer: 1500
-  });
-}
+  Mensaje() {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "SuperHeroe agregado satisfactoriamente",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+
+  // convertirImagen() {
+  //   const fileInput = document.getElementById("fileInput");
+  //   fileInput.addEventListener("change", e => {
+  //     const file = fileInput.file[0];
+  //     const reader = new FileReader();
+  //     reader.addEventListener("load", () => {
+  //       console.log(reader.result);
+  //     });
+  //     reader.readAsDataURL(file);
+  //   });
+  //}
 
 }
