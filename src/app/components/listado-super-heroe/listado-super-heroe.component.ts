@@ -17,7 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-listado-super-heroe',
   standalone: true,
-  imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule, 
+  imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule,
     FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule],
   templateUrl: './listado-super-heroe.component.html',
   styleUrl: './listado-super-heroe.component.css'
@@ -26,8 +26,11 @@ export class ListadoSuperHeroeComponent {
 
   p: number = 1;
 
+  indice: number;
+
   Superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
-  superheroes: Superheroe[] = []
+
+  superheroes: Superheroe[] = [];
 
   buscarsh: string = '';
 
@@ -50,6 +53,7 @@ export class ListadoSuperHeroeComponent {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.superheroes, event.previousIndex, event.currentIndex);
   }
+
 
 
 }

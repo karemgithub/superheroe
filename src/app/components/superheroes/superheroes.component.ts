@@ -12,6 +12,8 @@ import {
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
+import { Observable } from 'rxjs';
+import { ServiceSHService } from '../../services/service-sh.service';
 
 
 
@@ -25,15 +27,21 @@ import { MatListModule } from '@angular/material/list';
   styleUrl: './superheroes.component.css'
 })
 export class SuperheroesComponent implements OnInit {
+ 
+  
 
   @Input() Superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
   @Input() indice: number = 0;
 
-  constructor() { }
+  constructor(private servicioSH: ServiceSHService) { }
 
   ngOnInit(): void { }
 
-
+  EliminarSH(): void {
+    let obs$ = new Observable<Superheroe>;
+    obs$ = this.servicioSH.EliminarSH(this.indice);
+    obs$.subscribe(data=>{ this.Superheroe= data });  
+   }
 
 }
 
