@@ -13,20 +13,22 @@
         </div>
     </div>
 </div>  -->
-<a [routerLink]="['/detallesReceta',indice]" class="list-group-item" style="cursor: pointer;">
+<a [routerLink]="['/detallesSH',indice]" class="list-group-item" style="cursor: pointer;">
     <ol class="list-group ">
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
                 {{Superheroe.id}}
-                <img [src]="Superheroe.imagen " class="img-responsive" style="max-height: 50px;" [alt]="Superheroe.superheroe">
+                <img [src]="Superheroe.imagen " class="img-responsive" style="max-height: 50px;"
+                     [alt]="Superheroe.superheroe">
                 {{Superheroe.superheroe}}. {{Superheroe.editor}}
             </div>
 
-<!-- <button mat-raised-button  color="primary"(click)="openBottomSheet()">Modificar</button> -->
+            <!-- <button mat-raised-button  color="primary"(click)="openBottomSheet()">Modificar</button> -->
 
-            <button mat-flat-button color="primary">Modificar</button>           
-            <span class="badge bg-primary rounded-pill"></span>         
-            <button mat-flat-button color="warn" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
+            <button mat-flat-button color="primary">Modificar</button>
+            <span class="badge bg-primary rounded-pill"></span>
+            <button mat-flat-button color="warn" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Eliminar</button>
         </li>
     </ol>
 </a>
@@ -35,25 +37,26 @@
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button> -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmaión</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmaión</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3>Está seguro que desea eliminar al SuperHeroe:</h3>
+                <h2>{{Superheroe.superheroe}}. {{Superheroe.id}}</h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <div class="example-button-container">
+                    <button mat-flat-button color="warn" (click)="eliminar()">Eliminar</button>
+                </div>
+
+            </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <div class="example-button-container">
-            <button mat-flat-button color="warn" >Eliminar</button>
-          </div>
-        
-        </div>
-      </div>
     </div>
-  </div>
+</div>

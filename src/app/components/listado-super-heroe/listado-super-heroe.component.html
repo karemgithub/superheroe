@@ -26,19 +26,20 @@
         <div class="card-group">
             <div class="card">
                 <ul class="list-group">
-                    <li class="list-group-item"
-                        *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh">
-                        <app-superheroes [Superheroe]="sh"></app-superheroes>
+                    <!-- | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh 
+                      *ngFor="let sh of superheroes; let i=index "-->
+                    <li class="list-group-item" *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh  ">
+                        <app-superheroes [Superheroe]="sh" [indice]="sh.id"></app-superheroes>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
+            nextLabel="Siguiente"></pagination-controls>
     </div>
 </div>
-
 
 <!-- <ul class="list-group">
                
