@@ -3,10 +3,12 @@ import { HomeComponent } from './components/home/home.component';
 import { SuperheroesComponent } from './components/superheroes/superheroes.component';
 import { ListadoSuperHeroeComponent } from './components/listado-super-heroe/listado-super-heroe.component';
 import { AgragarSHComponent } from './components/agragar-sh/agragar-sh.component';
+import { ModificarshComponent } from './components/modificarsh/modificarsh.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     {path: 'mostrarSH', component:ListadoSuperHeroeComponent},
-    {path: 'agregarSH', component:AgragarSHComponent}  
+    {path: 'agregarSH', component:AgragarSHComponent},
+    {path: 'modificarsh', component: ModificarshComponent}
 
 ];

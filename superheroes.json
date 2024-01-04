@@ -199,60 +199,7 @@
       "personajes": "Norrin Radd",
       "imagen": "assets/Silver_Surfer.jpg",
       "descripcion": "El Silver Surfer es uno de los Miembros del Escuadrón de Superhéroes, y el Factor Energía de el Mismo. Aparecio por primera vez en el Episodio Un piloto vendrá. El es el único extraterrestre del escuadrón, por lo que le cuesta adaptarse a la Tierra. Sus ataques generalmente consisten en Energía Cósmica."
-    },
-    {
-      "id": 21,
-      "superheroe": "xman",
-      "editor": "Marvel Comic",
-      "actor_principal": "actor",
-      "tematica": "trmammam",
-      "imagen": "assets/desc/batman.png",
-      "personajes": ""
-    },
-    {
-      "id": 22,
-      "superheroe": "heroe",
-      "editor": "marvel",
-      "actor_principal": "ssssssss",
-      "tematica": "sssssssssss",
-      "imagen": "C:\\fakepath\\package-5.jpg",
-      "personajes": ""
-    },
-    {
-      "id": 23,
-      "superheroe": "super2",
-      "editor": "dc comic",
-      "actor_principal": "actor principal",
-      "tematica": "temann",
-      "imagen": "C:\\fakepath\\Thor.jpg",
-      "personajes": ""
-    },
-    {
-      "id": 24,
-      "superheroe": "heroe 2",
-      "editor": "marvel",
-      "actor_principal": "actor 1",
-      "tematica": "sfdgg",
-      "imagen": "assets/batman.jpg",
-      "personajes": ""
-    },
-    {
-      "id": 25,
-      "superheroe": "heroe 3",
-      "editor": "ssfsf",
-      "actor_principal": "svdv",
-      "tematica": "sfeg",
-      "imagen": "sfsf",
-      "personajes": ""
-    },
-    {
-      "id": 26,
-      "superheroe": "",
-      "editor": "",
-      "actor_principal": "",
-      "tematica": "",
-      "imagen": "",
-      "personajes": ""
     }
+   
   ]
 }

@@ -10,7 +10,7 @@ export class ServiceSHService {
 
     url: string = "http://localhost:3000/Superheroes";
 
-    sh: Superheroe[] = [];
+    a_sh: Superheroe[] = [];
 
     superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
 
@@ -18,7 +18,7 @@ export class ServiceSHService {
 
     getDatosSH(): Observable<Superheroe[]> {
         let obs$ = this.http.get<Superheroe[]>(this.url);
-        obs$.subscribe(data => { this.sh = data });
+        obs$.subscribe(data => { this.a_sh = data });
         return obs$;
     }
     //==========================================================================================================
@@ -36,36 +36,34 @@ export class ServiceSHService {
                 'imagen': shNew.imagen,
                 'personajes': shNew.personajes
             }).subscribe(data => { shNew = data });
-
-
     }
-
 
     //==========================================================================================================
     //ELIMINAR UN SUPERHEROE
     //==========================================================================================================
-
-
     eliminarSH(index: number): Observable<Superheroe> {
-        let id: number= Number (index);
-        let miurl= this.url+ id;
+        index= this.superheroe.id
+        //let id: number= Number (index);
+        let miurl = `${this.url} / ${index} `;
+        // let miurl = this.url + this.superheroe.id;
         return this.http.delete<Superheroe>(miurl);
     }
 
-
-    borrar(sh:Superheroe){
-        const urls = `http://localhost:3000/Superheroes/${sh.id}`;
-        this.http.delete(urls);
+    //==========================================================================================================
+    //MODIFICAR UN SUPERHEROE
+    //==========================================================================================================
+    modificarSH(addsh: Superheroe, id: number): void {
+        id = this.superheroe.id;
+        this.http.put<Superheroe>(this.url + id,
+            {
+                "id": 0,
+                'superheroe': addsh.superheroe,
+                'editor': addsh.editor,
+                'actor_principal': addsh.actor_principal,
+                'tematica': addsh.tematica,
+                'imagen': addsh.imagen,
+                'personajes': addsh.personajes
+            }).subscribe(data => { this.superheroe = data; });
+        this.a_sh[id] = addsh;
     }
-
-    // ModificarSH(): void {
-    //   this.http.put<Superheroe>(this.url,
-    //     {
-    //       "id": 3,
-    //       "titulo": "ANTONIO Y CLEOPATRA (nueva edición) ",
-    //       "tematica": "Drama"
-    //     }).subscribe(data => { this.= data; });
-    // }
-
-
 }

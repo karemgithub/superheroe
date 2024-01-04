@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>  -->
-<a [routerLink]="['/detallesSH',indice]" class="list-group-item" style="cursor: pointer;">
+<!-- <a [routerLink]="[indice]" class="list-group-item" style="cursor: pointer;"> -->
     <ol class="list-group ">
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto">
@@ -25,13 +25,13 @@
 
             <!-- <button mat-raised-button  color="primary"(click)="openBottomSheet()">Modificar</button> -->
 
-            <button mat-flat-button color="primary">Modificar</button>
+            <button mat-flat-button color="primary" [routerLink]="['/modificarsh']">Modificar</button>
             <span class="badge bg-primary rounded-pill"></span>
             <button mat-flat-button color="warn" data-bs-toggle="modal"
                 data-bs-target="#exampleModal">Eliminar</button>
         </li>
     </ol>
-</a>
+<!-- </a> -->
 
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -55,7 +55,6 @@
                 <div class="example-button-container">
                     <button mat-flat-button color="warn" (click)="eliminar()">Eliminar</button>
                 </div>
-
             </div>
         </div>
     </div>

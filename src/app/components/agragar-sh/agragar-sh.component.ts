@@ -32,7 +32,9 @@ import { HtmlParser } from '@angular/compiler';
 
   styleUrl: './agragar-sh.component.css'
 })
+
 export class AgragarSHComponent implements OnInit {
+  titulo: string="Agregar SuperHeroe";
   previsualizacion: string;
   superheroes: Superheroe[] = [];
   archivos: any[];
