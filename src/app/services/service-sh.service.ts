@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Superheroe } from '../models/superheroe.model';
@@ -16,16 +16,27 @@ export class ServiceSHService {
 
     constructor(private http: HttpClient) { }
 
+    //==========================================================================================================
+    //CARGAR TODOS LOS DATOS DE UN SUPERHEROE
+    //==========================================================================================================
     getDatosSH(): Observable<Superheroe[]> {
         let obs$ = this.http.get<Superheroe[]>(this.url);
         obs$.subscribe(data => { this.a_sh = data });
         return obs$;
     }
+
+    //==========================================================================================================
+    //ENCONTRAR UN SUPERHEROE
+    //==========================================================================================================
+    encontrarSuperHeroe(index: number): Observable <Superheroe> {
+        const params = new HttpParams().set("id", index)
+        return this.http.get<Superheroe>("http://localhost:3000/Superheroes", { params });
+    }
+
     //==========================================================================================================
     //INSERTAR UN SUPERHEROE
     //==========================================================================================================
     postSuperHeroe(shNew: Superheroe): void {
-
         this.http.post<Superheroe>(this.url,
             {
                 'id': 0,
@@ -42,10 +53,9 @@ export class ServiceSHService {
     //ELIMINAR UN SUPERHEROE
     //==========================================================================================================
     eliminarSH(index: number): Observable<Superheroe> {
-        index= this.superheroe.id
-        //let id: number= Number (index);
-        let miurl = `${this.url} / ${index} `;
-        // let miurl = this.url + this.superheroe.id;
+        let id: number = Number(index);
+        let miurl = "http://localhost:3000/Superheroes/" + id;
+        alert(miurl);
         return this.http.delete<Superheroe>(miurl);
     }
 
@@ -56,7 +66,7 @@ export class ServiceSHService {
         id = this.superheroe.id;
         this.http.put<Superheroe>(this.url + id,
             {
-                "id": 0,
+                "id": id,
                 'superheroe': addsh.superheroe,
                 'editor': addsh.editor,
                 'actor_principal': addsh.actor_principal,

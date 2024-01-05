@@ -24,7 +24,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class ListadoSuperHeroeComponent {
 
-  p: number = 1;
+  p: number = 0;
 
   indice: number;
 

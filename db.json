@@ -1,26 +1,6 @@
 {
   "Superheroes": [
     {
-      "id": 1,
-      "superheroe": "Batman",
-      "editor": "DC Comics",
-      "actor_principal": "Bruce Wayne",
-      "tematica": "Detective Comics #27",
-      "personajes": "Bruce Wayne",
-      "imagen": "assets/batman.png",
-      "descripcion": "Batman es un hombre alto, caucásico, tiene una figura oscura e imponente, posee con cabello negro corto y ojos marrones. Él lleva un traje gris oscuro con el símbolo negro de un murciélago, en medio de el pecho. Batman también usa una capucha negra que lo cubre en todo momento para ocultar su identidad"
-    },
-    {
-      "id": 2,
-      "superheroe": "Superman",
-      "editor": "DC Comics",
-      "actor_principal": "Kal-El",
-      "tematica": "Action Comics #1",
-      "personajes": "Kal-El",
-      "imagen": "assets/Superman.jpg",
-      "descripcion": "Superman es un hombre alto, musculoso, hombre de raza blanca con ojos azules y pelo negro corto con un rizo. Superman, siempre lleva su uniforme azul con su famoso rojo y amarillo escudo de S en el pecho, un cinturón amarillo, botas rojas y una capa roja."
-    },
-    {
       "id": 3,
       "superheroe": "Flash",
       "editor": "DC Comics",
@@ -200,6 +180,5 @@
       "imagen": "assets/Silver_Surfer.jpg",
       "descripcion": "El Silver Surfer es uno de los Miembros del Escuadrón de Superhéroes, y el Factor Energía de el Mismo. Aparecio por primera vez en el Episodio Un piloto vendrá. El es el único extraterrestre del escuadrón, por lo que le cuesta adaptarse a la Tierra. Sus ataques generalmente consisten en Energía Cósmica."
     }
-   
   ]
 }

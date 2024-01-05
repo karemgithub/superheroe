@@ -5,6 +5,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { ServiceSHService } from '../../services/service-sh.service';
 import { Superheroe } from '../../models/superheroe.model';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-modificarsh',
@@ -18,12 +19,14 @@ export class ModificarshComponent implements OnInit {
 
   superheroes: Superheroe[] = [];
   indice: number = 0;
+  
 
-  constructor(private servicioSH: ServiceSHService, private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private servicioSH: ServiceSHService, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute ) { }
 
 
   ngOnInit(): void {
     this.CargarDatosSH;
+    this.indice = this.route.snapshot.params['id'];
   }
 
   //==========================================================================================================

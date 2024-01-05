@@ -25,9 +25,8 @@
         <div class="card-group">
             <div class="card">
                 <ul class="list-group">
-                    <!-- | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh 
-                      *ngFor="let sh of superheroes; let i=index "-->
-                    <li class="list-group-item" *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh  ">
+                    <li class="list-group-item"
+                        *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh  ">
                         <app-superheroes [Superheroe]="sh" [indice]="sh.id"></app-superheroes>
                     </li>
                 </ul>
@@ -35,28 +34,6 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"
-            nextLabel="Siguiente"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
     </div>
 </div>
-
-<!-- <ul class="list-group">
-               
-                <li *ngFor="let sh of superheroes | filtrarSH: buscarsh">
-
-                    <app-superheroes [Superheroe]="sh"></app-superheroes>
-                </li>
-
-            </ul> -->
-<!-- @for (sh of superheroes; track sh; let i = $index)
-            {
-            <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
-            } -->
-
-
-
-<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                    @for (sh of superheroes; track sh; let i = $index ) {
-                    <app-superheroes [Superheroe]="sh" [indice]="i"></app-superheroes>
-                    }
-                </div> -->
