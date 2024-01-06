@@ -26,7 +26,7 @@
             <div class="card">
                 <ul class="list-group">
                     <li class="list-group-item"
-                        *ngFor="let sh of superheroes | paginate: { itemsPerPage: 4, currentPage: p } | filtrarSH: buscarsh  ">
+                        *ngFor="let sh of superheroes | filtrarSH: buscarsh | paginate: { itemsPerPage: 4, currentPage: p }  ">
                         <app-superheroes [Superheroe]="sh" [indice]="sh.id"></app-superheroes>
                     </li>
                 </ul>
