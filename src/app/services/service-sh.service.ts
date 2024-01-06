@@ -28,6 +28,13 @@ export class ServiceSHService {
     //==========================================================================================================
     //ENCONTRAR UN SUPERHEROE
     //==========================================================================================================
+
+    // getSuperheroeid(id: number): Observable<Superheroe> {
+    //     let direccion = this.url + id;
+    //     return this.http.get<Superheroe>(direccion)
+    // }
+
+
     encontrarSuperHeroe(index: number): Observable <Superheroe> {
         const params = new HttpParams().set("id", index)
         return this.http.get<Superheroe>("http://localhost:3000/Superheroes", { params });

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, provideRouter, withComponentInputBinding } from '@angular/router';
 import { ServiceSHService } from '../../services/service-sh.service';
 import { Superheroe } from '../../models/superheroe.model';
 import { Observable } from 'rxjs';
@@ -10,18 +10,25 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SuperheroesComponent } from '../superheroes/superheroes.component';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [CommonModule, MatDividerModule, MatButtonModule, MatListModule, ReactiveFormsModule],
+  imports: [CommonModule, MatDividerModule, MatButtonModule, MatListModule, ReactiveFormsModule, SuperheroesComponent],
   templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css'
 })
 export class DetallesComponent implements OnInit {
+
+  @Input() id?: string;
+
   // declaración de atributos y variables.
   indice: number = 0;
+
   titulo: string = "Modificar SuperHeroe";
+
   superheroe: string = "";
   editor: string = "";
   actor_principal: string = "";
@@ -36,20 +43,14 @@ export class DetallesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private servicesh: ServiceSHService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.indice = this.route.snapshot.params['id'];
-    alert(this.indice);
-    this.ver_detalles();
+    console.log('id=>', this.id)
+    //  this.indice = this.route.snapshot.params['id'];
+    if (this.id) {
+      this.servicesh.encontrarSuperHeroe(this.indice)
+    }
   }
 
-  ver_detalles() {
-    this.servicesh.encontrarSuperHeroe(this.indice);
-    this.superheroe = this.superheroe;
-    this.editor = this.editor;
-    this.actor_principal = this.actor_principal;
-    this.tematica = this.tematica;
-    this.imagen = this.imagen;
-    this.personajes = this.personajes;
-  }
+
 
   //==========================================================================================================
   //ELIMINAR UN SUPERHEROE

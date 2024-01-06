@@ -1,16 +1,6 @@
 {
   "Superheroes": [
     {
-      "id": 3,
-      "superheroe": "Flash",
-      "editor": "DC Comics",
-      "actor_principal": "Jay Garrick",
-      "tematica": "Flash Comics #1",
-      "personajes": "Jay Garrick, Barry Allen, Wally West, Bart Allen",
-      "imagen": "assets/Flash.jpg",
-      "descripcion": "Flash (también conocido por su apodo El Velocista Escarlata) es un superhéroe de DC Comics que posee una rapidez sobrehumana, la cual incluye la habilidad de correr a gran velocidad, reflejos sobrehumanos y la capacidad de violar algunas leyes de la física."
-    },
-    {
       "id": 4,
       "superheroe": "Green Lantern",
       "editor": "DC Comics",
