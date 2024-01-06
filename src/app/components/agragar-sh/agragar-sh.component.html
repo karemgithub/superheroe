@@ -13,10 +13,10 @@
             </div>
 
             <div class=" mb-3">
-                <input type="text" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen">
-                <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
-                    El la imagen es obligaroria
-                </div>
+                <input type="file" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen"
+                (change)="capturarImagen($event)">
+                <pre>{{imagen}}</pre>
+              
             </div>
 
             <div class=" mb-3">
@@ -49,6 +49,6 @@
     </div>
     <div class="example-button-container">
         <button mat-raised-button color="accent" (click)="AgregarSuperHeroe()"
-            [routerLink]="['/mostrarSH']" [disabled]="formSH.invalid" >Agregar</button>
+            [routerLink]="['/mostrarSH']"  >Agregar</button>
     </div>
 </div>

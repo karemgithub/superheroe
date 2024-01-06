@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgragarSHComponent } from './agragar-sh.component';
+import { AgragarSHComponent } from './agregar-sh.component';
 
 describe('AgragarSHComponent', () => {
   let component: AgragarSHComponent;

@@ -32,9 +32,8 @@ import { HtmlParser } from '@angular/compiler';
 
   styleUrl: './agragar-sh.component.css'
 })
-
 export class AgragarSHComponent implements OnInit {
-  titulo: string="Agregar SuperHeroe";
+  titulo: string = "Agregar SuperHeroe"
   previsualizacion: string;
   superheroes: Superheroe[] = [];
   archivos: any[];
@@ -43,6 +42,8 @@ export class AgragarSHComponent implements OnInit {
   aux: number[] = [];
 
   event: EventEmitter;
+
+  imgBase64: string;
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer, private servicioSH: ServiceSHService, private fb: FormBuilder) { }
 
@@ -107,6 +108,22 @@ export class AgragarSHComponent implements OnInit {
       timer: 1500
     });
   }
+
+  capturarImagen(event: any): void {
+    const archivo = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = reader.result as string;
+      this.imgBase64 = base64String;
+      this.imagen.setValue(this.imgBase64);
+      console.log(base64String);
+    };
+    if (archivo)
+      reader.readAsDataURL(archivo);
+  }
+
+
+
 
   // convertirImagen() {
   //   const fileInput = document.getElementById("fileInput");

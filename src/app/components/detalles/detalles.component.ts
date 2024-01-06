@@ -43,8 +43,10 @@ export class DetallesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private servicesh: ServiceSHService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.indice = this.route.snapshot.params['id'];
+    
     console.log('id=>', this.id)
-    //  this.indice = this.route.snapshot.params['id'];
+
     if (this.id) {
       this.servicesh.encontrarSuperHeroe(this.indice)
     }

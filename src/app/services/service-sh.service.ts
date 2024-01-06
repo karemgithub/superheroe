@@ -61,7 +61,7 @@ export class ServiceSHService {
     //==========================================================================================================
     eliminarSH(index: number): Observable<Superheroe> {
         let id: number = Number(index);
-        let miurl = "http://localhost:3000/Superheroes/" + id;
+        let miurl = "http://localhost:3000/Superheroes/"+id;
         alert(miurl);
         return this.http.delete<Superheroe>(miurl);
     }

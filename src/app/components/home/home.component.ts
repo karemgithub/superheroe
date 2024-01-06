@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 
@@ -9,6 +9,15 @@ import { LoginComponent } from '../login/login.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  load: boolean = false;
+
+  ngOnInit(): void {
+
+    setTimeout(() => {
+      this.load = true;
+    }, 5000);
+  }
 
 }
