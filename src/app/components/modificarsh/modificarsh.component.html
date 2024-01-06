@@ -1,54 +1,53 @@
 <div class="container">
-    <br>
     <div class="text-center mb-3 pb-3">
-        <h1>{{titulo}}</h1>
-        <br>
         <form [formGroup]="formSH">
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="SuperHeroe" aria-describedby="basic-addon1"
+                <label> Nombre del SuperHeroe</label>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder={{Superheroe.superheroe}}
                     formControlName="superheroe">
-                <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
+                <!-- <div class="alert alert-danger mt-2" [hidden]="superheroe.valid || superheroe.pristine">
                     El nombre del SuperHeroe es obligarorio
-                </div>
+                </div> -->
             </div>
 
             <div class=" mb-3">
-                <input type="text" id="fileInput" class="form-control" placeholder="imagen" formControlName="imagen">
-                <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
+                <label> Imagen</label>
+                <input type="file" id="fileInput" class="form-control"  formControlName="imagen" placeholder={{Superheroe.imagen}}>
+                <!-- <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
                     El la imagen es obligaroria
-                </div>
+                </div> -->
             </div>
 
             <div class=" mb-3">
-                <input type="text" class="form-control" placeholder="Marvel Comics ó DC Comics" formControlName="editor"
+                <label> Edito</label>
+                <input type="text" class="form-control" placeholder={{Superheroe.editor}} formControlName="editor"
                     aria-describedby="basic-addon1">
-                <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
+                <!-- <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
                     Debe especificar Marvel Comics ó DC Comics
-                </div>
+                </div> -->
             </div>
 
             <div class=" mb-3">
-                <input type="text" class="form-control" placeholder="actor principal" aria-describedby="basic-addon1"
+                <label> Actor principal</label>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" placeholder={{Superheroe.actor_principal}}
                     formControlName="actorprincipal">
-                <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
+                <!-- <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
                     El actor es obligatorio
-                </div>
+                </div> -->
             </div>
 
             <div class=" mb-3">
-                <input type="text" class="form-control" placeholder="temática" aria-describedby="basic-addon1"
+                <label> Temática</label>
+                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder={{Superheroe.tematica}}
                     formControlName="tematica">
-                <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
+                <!-- <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
                     La temática es obligatoria
-                </div>
+                </div> -->
             </div>
             <div class=" mb-3">
-                <input type="text" class="form-control" placeholder="personajes" aria-describedby="basic-addon1">
+                <label> Personjes</label>
+                <input type="text" class="form-control"  aria-describedby="basic-addon1" placeholder={{Superheroe.personajes}}>
             </div>
         </form>
-    </div>
-    <div class="example-button-container">
-        <button mat-raised-button color="accent" 
-             [disabled]="formSH.invalid" >Modificar</button>
     </div>
 </div>

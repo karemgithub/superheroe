@@ -12,15 +12,18 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SuperheroesComponent } from '../superheroes/superheroes.component';
 import { routes } from '../../app.routes';
+import { ModificarshComponent } from '../modificarsh/modificarsh.component';
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [CommonModule, MatDividerModule, MatButtonModule, MatListModule, ReactiveFormsModule, SuperheroesComponent],
+  imports: [CommonModule, MatDividerModule, MatButtonModule, MatListModule, ReactiveFormsModule, SuperheroesComponent, ModificarshComponent],
   templateUrl: './detalles.component.html',
   styleUrl: './detalles.component.css'
 })
 export class DetallesComponent implements OnInit {
+
+  superheroes: Superheroe[] = [];
 
   @Input() id?: string;
 
@@ -44,12 +47,6 @@ export class DetallesComponent implements OnInit {
 
   ngOnInit(): void {
     this.indice = this.route.snapshot.params['id'];
-    
-    console.log('id=>', this.id)
-
-    if (this.id) {
-      this.servicesh.encontrarSuperHeroe(this.indice)
-    }
   }
 
 

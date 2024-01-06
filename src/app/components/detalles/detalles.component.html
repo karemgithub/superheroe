@@ -61,50 +61,19 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar SuperHeroe</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div class="container">
-            <br>
-            <div class="text-center mb-3 pb-3">
-              <form [formGroup]="formSH">
-                <div class="mb-3">
-                  <label>SuperHeroe</label>
-                  <input type="text" class="form-control" aria-describedby="basic-addon1" formControlName="superheroe">
 
-                </div>
+        <div class="modal-body" *ngFor=" let sh of superheroes">
+          <app-modificarsh [Superheroe]="sh" [indice]="sh.id"></app-modificarsh>
 
-                <div class=" mb-3">
-                  <label>Imagen</label>
-                  <input type="text" id="fileInput" class="form-control" formControlName="imagen">
-
-                </div>
-
-                <div class=" mb-3">
-                  <label>Editor</label>
-                  <input type="text" class="form-control" formControlName="editor" aria-describedby="basic-addon1">
-                </div>
-                <div class=" mb-3">
-                  <label>Actor principal</label>
-                  <input type="text" class="form-control" aria-describedby="basic-addon1"
-                    formControlName="actorprincipal">
-                </div>
-                <div class=" mb-3">
-                  <label>Temática</label>
-                  <input type="text" class="form-control" aria-describedby="basic-addon1" formControlName="tematica">
-                </div>
-                <div class=" mb-3">
-                  <label>Personajes</label>
-                  <input type="text" class="form-control" aria-describedby="basic-addon1">
-                </div>
-              </form>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" color="primary" data-bs-dismiss="modal">Cancelar</button>
+            <div class="example-button-container">
+              <button mat-flat-button color="primary">Modificar</button>
             </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" color="primary" data-bs-dismiss="modal">Cancelar</button>
-          <div class="example-button-container">
-            <button mat-flat-button color="primary">Modificar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

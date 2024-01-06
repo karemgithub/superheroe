@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -15,18 +15,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './modificarsh.component.css'
 })
 export class ModificarshComponent implements OnInit {
-  titulo: string= "Modificar SuperHeroe";
+
+  @Input() Superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
+  @Input() indice: number = 0;
+
+  @Input() id?: string;
 
   superheroes: Superheroe[] = [];
-  indice: number = 0;
-  
 
   constructor(private servicioSH: ServiceSHService, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute ) { }
 
-
   ngOnInit(): void {
-    this.CargarDatosSH;
     this.indice = this.route.snapshot.params['id'];
+    console.log('id=>', this.id)
+
+    if (this.id) {
+      this.servicioSH.encontrarSuperHeroe(this.indice)
+    }
   }
 
   //==========================================================================================================
@@ -76,8 +81,6 @@ export class ModificarshComponent implements OnInit {
     return this.formSH.get('personajes') as FormControl;
   }
  //==========================================================================================================
-
-
 
   modificarSuperHeroe() {
     let superh = new Superheroe(0, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
