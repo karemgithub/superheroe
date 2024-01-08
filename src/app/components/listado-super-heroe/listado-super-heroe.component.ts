@@ -13,12 +13,14 @@ import { CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } from '@angular/cdk
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Router } from 'express';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SpinnerService } from '../../services/spinner.service';
+import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 
 @Component({
   selector: 'app-listado-super-heroe',
   standalone: true,
   imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule,
-    FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule],
+    FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule, NgxSpinnerModule],
   templateUrl: './listado-super-heroe.component.html',
   styleUrl: './listado-super-heroe.component.css'
 })
@@ -34,9 +36,10 @@ export class ListadoSuperHeroeComponent {
 
   buscarsh: string = '';
 
-  constructor(private servicioSH: ServiceSHService) { }
+  constructor(private servicioSH: ServiceSHService, private spinnerService: SpinnerService) { }
 
   ngOnInit(): void {
+    this.spinnerService.llamarSpiner();
     this.getObsSuperHeroes();
   }
 
