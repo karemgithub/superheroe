@@ -27,11 +27,13 @@ export class ModificarshComponent implements OnInit {
 
   ngOnInit(): void {
     this.indice = this.route.snapshot.params['id'];
-    console.log('id=>', this.id)
+    this.superheroe.setValue( this.Superheroe.superheroe);
+    this.actorprincipal.setValue( this.Superheroe.actor_principal);
+    this.editor.setValue( this.Superheroe.editor);
+    this.imagen.setValue( this.Superheroe.imagen);
+    this.tematica.setValue( this.Superheroe.tematica);
+    this.personajes.setValue( this.Superheroe.personajes);
 
-    if (this.id) {
-      this.servicioSH.encontrarSuperHeroe(this.indice)
-    }
   }
 
   //==========================================================================================================
@@ -82,10 +84,11 @@ export class ModificarshComponent implements OnInit {
   }
  //==========================================================================================================
 
-  modificarSuperHeroe() {
-    let superh = new Superheroe(0, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
-    
+ 
+  actualizarSH(): void {
+    let superh = new Superheroe(this.indice, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value); 
+        this.servicioSH.modificarSH(superh, this.indice).subscribe(data => { superh = data });
 
-  }
-
+    }
+  
 }

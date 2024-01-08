@@ -48,12 +48,12 @@ export class DetallesComponent implements OnInit {
   ngOnInit(): void {
     this.indice = this.route.snapshot.params['id'];
     this.buscarSH(this.indice);
-    this.superheroe = this.Superheroe.superheroe; 
+    this.superheroe = this.Superheroe.superheroe;
   }
 
   buscarSH(indice: number): void {
     this.servicesh.encontrarSuperHeroe(indice).subscribe(data => { this.sh = data });
-    alert(this.Superheroe)
+
   }
 
   //==========================================================================================================
@@ -107,4 +107,8 @@ export class DetallesComponent implements OnInit {
     return this.formSH.get('personajes') as FormControl;
   }
   //==========================================================================================================
+
+  
+
+
 }

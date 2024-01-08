@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     {path: 'mostrarSH', component:ListadoSuperHeroeComponent},
     {path: 'agregarSH', component:AgragarSHComponent},
-    {path: 'modificarsh', component: ModificarshComponent},
+   // {path: 'modificarsh', component: ModificarshComponent},
     {path: 'detalles/:id', component: DetallesComponent}
 
 ];

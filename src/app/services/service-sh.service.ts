@@ -8,7 +8,7 @@ import { Superheroe } from '../models/superheroe.model';
 })
 export class ServiceSHService {
 
-    url: string = "http://localhost:3000/Superheroes";
+    url: string = "http://localhost:3000/Superheroes/";
 
     a_sh: Superheroe[] = [];
 
@@ -35,7 +35,7 @@ export class ServiceSHService {
     // }
 
 
-    encontrarSuperHeroe(index: number): Observable <Superheroe[]> {
+    encontrarSuperHeroe(index: number): Observable<Superheroe[]> {
         const params = new HttpParams().set("id", index)
         return this.http.get<Superheroe[]>("http://localhost:3000/Superheroes", { params });
     }
@@ -61,7 +61,7 @@ export class ServiceSHService {
     //==========================================================================================================
     eliminarSH(index: number): Observable<Superheroe> {
         let id: number = Number(index);
-        let miurl = "http://localhost:3000/Superheroes/"+id;
+        let miurl = "http://localhost:3000/Superheroes/" + id;
         alert(miurl);
         return this.http.delete<Superheroe>(miurl);
     }
@@ -69,9 +69,10 @@ export class ServiceSHService {
     //==========================================================================================================
     //MODIFICAR UN SUPERHEROE
     //==========================================================================================================
-    modificarSH(addsh: Superheroe, id: number): void {
-        id = this.superheroe.id;
-        this.http.put<Superheroe>(this.url + id,
+    modificarSH(addsh: Superheroe, id: number):  Observable<Superheroe> {
+        id = addsh.id;
+    alert(id)
+        return this.http.put<Superheroe>(this.url+ id,
             {
                 "id": id,
                 'superheroe': addsh.superheroe,
@@ -80,7 +81,7 @@ export class ServiceSHService {
                 'tematica': addsh.tematica,
                 'imagen': addsh.imagen,
                 'personajes': addsh.personajes
-            }).subscribe(data => { this.superheroe = data; });
-        this.a_sh[id] = addsh;
+            })
+
     }
 }
