@@ -1,18 +1,22 @@
 <div class="container-fluid py-5">
   <div class="container pt-5">
     <div class="row">
+      @for (superh of sh; track superh ; let i=$index) {
       <div class="col-lg-6" style="min-height: 500px;">
+
         <div class="position-relative h-100">
-          <img class="position-absolute w-100 h-100" [src]="Superheroe.imagen" style="object-fit: cover;">
+
+          <img class="position-absolute w-100 h-100" [src]="superh.imagen" style="object-fit: cover;">
         </div>
       </div>
       <div class="col-lg-6 pt-5 pb-lg-5">
         <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
           <h3 class="text-primary text-uppercase" style="letter-spacing: 5px;">{{Superheroe.id}}</h3>
-          <h1 class="mb-3">{{Superheroe.superheroe}}</h1>
-          <p>{{Superheroe.tematica}}</p>
-          <p>{{Superheroe.actor_principal}}</p>
-          <p>{{Superheroe.editor}}</p>
+          <h1 class="mb-3">{{superh.superheroe}}</h1>
+          <p>{{superh.tematica}}</p>
+          <p>{{superh.actor_principal}}</p>
+          <p>{{superh.editor}}</p>
+
           <div class="row mb-4">
             <div class="col-6">
             </div>
@@ -20,57 +24,58 @@
           </div>
         </div>
       </div>
+    }
     </div>
-    <br>
-    <button mat-flat-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Modificar</button>
-
-    <button mat-flat-button color="warn" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
   </div>
+</div>
+  <br>
+  <button mat-flat-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Modificar</button>
+
+  <button mat-flat-button color="warn" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
 
 
-  <!-- =====================================================MODEL=========================================================== -->
+<!-- =====================================================MODEL=========================================================== -->
 
 
-  <!-- Modal Eliminar-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmaión</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3>Está seguro que desea eliminar al SuperHeroe:</h3>
-          <h2>{{Superheroe.superheroe}}. {{Superheroe.id}}</h2>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <div class="example-button-container">
-            <button mat-flat-button color="warn" (click)="eliminar()">Eliminar</button>
-          </div>
+<!-- Modal Eliminar-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmaión</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3>Está seguro que desea eliminar al SuperHeroe:</h3>
+        <h2>{{Superheroe.superheroe}}. {{Superheroe.id}}</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <div class="example-button-container">
+          <button mat-flat-button color="warn" (click)="eliminar()">Eliminar</button>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Modal Modificar-->
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar SuperHeroe</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+<!-- Modal Modificar-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar SuperHeroe</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
 
-        <div class="modal-body" *ngFor=" let sh of superheroes">
-          <app-modificarsh [Superheroe]="sh" [indice]="sh.id"></app-modificarsh>
+      <div class="modal-body" *ngFor=" let sh of superheroes">
+        <app-modificarsh [Superheroe]="sh" [indice]="sh.id"></app-modificarsh>
 
-          
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" color="primary" data-bs-dismiss="modal">Cancelar</button>
-            <div class="example-button-container">
-              <button mat-flat-button color="primary">Modificar</button>
-            </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" color="primary" data-bs-dismiss="modal">Cancelar</button>
+          <div class="example-button-container">
+            <button mat-flat-button color="primary">Modificar</button>
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <div class="login">
-    <form class="custom-form" method="post" [formGroup]="formLogin"  (ngSubmit)="onlogin(formLogin.value)">
+    <form  class="custom-form"   method="post" >
         <h1>Login</h1>
         <br>
-        <input type="text"   required="required"  formControlName="usuario" />
+        <input type="text"   required="required"   />
         <br>
-        <input type="password"  required="required" formControlName="password"/>
+        <input type="password"  required="required" />
         <br>
         <button type="submit">Acceso</button>
     </form>

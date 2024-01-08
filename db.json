@@ -4,6 +4,41 @@
       "id": 1,
       "usuario": "karem",
       "password": 123
+    },
+    {
+      "usuario": "karem@gmail.com",
+      "password": "karem123",
+      "id": 2
+    },
+    {
+      "usuario": "mandy@gmail.com",
+      "password": "mandy123",
+      "id": 3
+    },
+    {
+      "usuario": "karem",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "usuario": "karem",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "usuario": "karem",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "usuario": "karem@gmail.com",
+      "password": "karem123",
+      "id": 7
+    },
+    {
+      "usuario": "karem",
+      "password": "123",
+      "id": 8
     }
   ],
   "Superheroes": [
