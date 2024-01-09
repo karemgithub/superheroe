@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="text-center mb-3 pb-3">
+    <div class="text mb-3 pb-3" style="font-style: oblique;">
         <form [formGroup]="formSH">
             <div class="mb-3">
                 <label> Nombre del SuperHeroe</label>
@@ -8,47 +8,29 @@
                     El nombre del SuperHeroe es obligarorio
                 </div> -->
             </div>
-
             <div class=" mb-3">
                 <label> Imagen</label>
-                <input type="file" id="fileInput" class="form-control"  formControlName="imagen" >
-                <!-- <div class="alert alert-danger mt-2" [hidden]="imagen.valid || imagen.pristine">
-                    El la imagen es obligaroria
-                </div> -->
+                <input type="file" id="fileInput" class="form-control" formControlName="imagen">
             </div>
-
             <div class=" mb-3">
                 <label> Edito</label>
-                <input type="text" class="form-control"  formControlName="editor"
-                    aria-describedby="basic-addon1">
-                <!-- <div class="alert alert-danger mt-2" [hidden]="editor.valid || editor.pristine">
-                    Debe especificar Marvel Comics ó DC Comics
-                </div> -->
+                <input type="text" class="form-control" formControlName="editor" aria-describedby="basic-addon1">
             </div>
-
             <div class=" mb-3">
                 <label> Actor principal</label>
-                <input type="text" class="form-control" aria-describedby="basic-addon1" 
-                    formControlName="actorprincipal">
-                <!-- <div class="alert alert-danger mt-2" [hidden]="actorprincipal.valid || actorprincipal.pristine">
-                    El actor es obligatorio
-                </div> -->
+                <input type="text" class="form-control" formControlName="actorprincipal" aria-describedby="basic-addon1" >
             </div>
 
             <div class=" mb-3">
                 <label> Temática</label>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" 
-                    formControlName="tematica">
-                <!-- <div class="alert alert-danger mt-2" [hidden]="tematica.valid || tematica.pristine">
-                    La temática es obligatoria
-                </div> -->
+                <input type="text" class="form-control" formControlName="tematica" aria-describedby="basic-addon1" >
+              
             </div>
             <div class=" mb-3">
                 <label> Personajes</label>
-                <input type="text" class="form-control"  aria-describedby="basic-addon1" formControlName="personajes">
+                <input type="text" class="form-control"  formControlName="personajes" aria-describedby="basic-addon1" >
             </div>
         </form>
-       
-        <button mat-flat-button color="primary" (click)="actualizarSH()" >Modificar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="actualizarSH()">Modificar</button>
     </div>
 </div>

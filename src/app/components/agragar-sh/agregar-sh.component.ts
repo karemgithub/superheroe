@@ -122,19 +122,4 @@ export class AgragarSHComponent implements OnInit {
       reader.readAsDataURL(archivo);
   }
 
-
-
-
-  // convertirImagen() {
-  //   const fileInput = document.getElementById("fileInput");
-  //   fileInput.addEventListener("change", e => {
-  //     const file = fileInput.file[0];
-  //     const reader = new FileReader();
-  //     reader.addEventListener("load", () => {
-  //       console.log(reader.result);
-  //     });
-  //     reader.readAsDataURL(file);
-  //   });
-  //}
-
 }

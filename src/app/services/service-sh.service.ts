@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Superheroe } from '../models/superheroe.model';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,7 @@ export class ServiceSHService {
 
     superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
     //==========================================================================================================
     //CARGAR TODOS LOS DATOS DE UN SUPERHEROE
@@ -69,10 +70,9 @@ export class ServiceSHService {
     //==========================================================================================================
     //MODIFICAR UN SUPERHEROE
     //==========================================================================================================
-    modificarSH(addsh: Superheroe, id: number):  Observable<Superheroe> {
+    modificarSH(addsh: Superheroe, id: number): Observable<Superheroe> {
         id = addsh.id;
-    alert(id)
-        return this.http.put<Superheroe>(this.url+ id,
+        return this.http.put<Superheroe>(this.url + id,
             {
                 "id": id,
                 'superheroe': addsh.superheroe,
@@ -80,8 +80,7 @@ export class ServiceSHService {
                 'actor_principal': addsh.actor_principal,
                 'tematica': addsh.tematica,
                 'imagen': addsh.imagen,
-                'personajes': addsh.personajes
+                'personajes': addsh.personajes,
             })
-
     }
 }
