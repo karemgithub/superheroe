@@ -15,12 +15,13 @@ import { Router } from 'express';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SpinnerService } from '../../services/spinner.service';
 import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-listado-super-heroe',
   standalone: true,
   imports: [CommonModule, SuperheroesComponent, FiltrarSHPipe, MatIconModule, MatDividerModule, MatButtonModule,
-    FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule, NgxSpinnerModule],
+    FormsModule, CdkDropList, CdkDrag, RouterLink, NgxPaginationModule, NgxSpinnerModule, NgxUiLoaderModule],
   templateUrl: './listado-super-heroe.component.html',
   styleUrl: './listado-super-heroe.component.css'
 })
