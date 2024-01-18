@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -6,6 +6,7 @@ import { ServiceSHService } from '../../services/service-sh.service';
 import { Superheroe } from '../../models/superheroe.model';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modificarsh',
@@ -23,6 +24,8 @@ export class ModificarshComponent implements OnInit {
 
   superheroes: Superheroe[] = [];
 
+  @Output() newItemEvent = new EventEmitter<Superheroe>();
+
   constructor(private servicioSH: ServiceSHService, private fb: FormBuilder, private http: HttpClient, private route: ActivatedRoute,
     private router: Router) { }
 
@@ -34,8 +37,8 @@ export class ModificarshComponent implements OnInit {
     this.imagen.setValue(this.Superheroe.imagen);
     this.tematica.setValue(this.Superheroe.tematica);
     this.personajes.setValue(this.Superheroe.personajes);
-
   }
+
 
   //==========================================================================================================
   //CARGAR SUPERHEROE
@@ -89,6 +92,7 @@ export class ModificarshComponent implements OnInit {
   actualizarSH(): void {
     let superh = new Superheroe(this.indice, this.superheroe.value, this.editor.value, this.actorprincipal.value, this.tematica.value, this.personajes.value, this.imagen.value);
     this.servicioSH.modificarSH(superh, this.indice).subscribe(data => { superh = data });
+    this.newItemEvent.emit(superh);
     this.router.navigate(['/detalles'+ this.indice])
   }
 

@@ -44,7 +44,7 @@
   "Superheroes": [
     {
       "id": 7,
-      "superheroe": "Martian Manhunter",
+      "superheroe": "Martian Manhunterjbhjgjh",
       "editor": "DC Comics",
       "actor_principal": "J'onn J'onzz",
       "tematica": "Detective Comics #225",
@@ -53,23 +53,12 @@
     },
     {
       "id": 8,
-      "superheroe": "Robin Nightwing",
+      "superheroe": "Robin Nightwingppppp",
       "editor": "DC Comics",
       "actor_principal": "Dick Grayson",
       "tematica": "Detective Comics #38",
-      "personajes": "Dick Grayson",
       "imagen": "assets/Robin_Nightwing.jpg",
-      "descripcion": "Como Nightwing es serio, grave y calculador, más parecido ahora como su antiguo mentor, Batman. Y es nombrado líder de El Equipo responsable de dar las misiones y formar los equipos."
-    },
-    {
-      "id": 9,
-      "superheroe": "Blue Beetle",
-      "editor": "DC Comics",
-      "actor_principal": "Dan Garret",
-      "tematica": "Mystery Men Comics #1",
-      "personajes": "Dan Garret, Ted Kord, Jaime Reyes",
-      "imagen": "assets/Blue_Betlee.jpg",
-      "descripcion": "Blue Beetle no solo puede crear objetos, sino que también puede hacer todo tipo de armas de energía, como escudos e incluso espadas. También es un cambiador de forma, lo que le permite ajustarse a muchos lugares y situaciones para salir airoso (o al menos, intentarlo)."
+      "personajes": "Dick Grayson"
     },
     {
       "id": 10,

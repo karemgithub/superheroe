@@ -38,8 +38,7 @@
                 <tr>
                   <td><button mat-flat-button color="primary" data-bs-toggle="modal"
                       data-bs-target="#exampleModal1">Modificar</button>
-                    <button mat-flat-button color="warn" data-bs-toggle="modal"
-                      data-bs-target="#exampleModal">Eliminar</button>
+                    <button mat-flat-button color="warn" (click)="confirEliminar()">Eliminar</button>
                   </td>
 
                 </tr>
@@ -47,8 +46,8 @@
             </table>
           </div>
         </div>
-        
-      </div>    
+
+      </div>
 
       }
     </div>
@@ -59,7 +58,9 @@
 <!-- =====================================================MODEL=========================================================== -->
 
 
-<!-- Modal Eliminar-->
+<!-- Modal Eliminar
+data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -74,7 +75,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <div class="example-button-container">
-          <button mat-flat-button color="warn" (click)="eliminar()">Eliminar</button>
+          <button mat-flat-button color="warn">Eliminar</button>
         </div>
       </div>
     </div>
@@ -89,13 +90,11 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar SuperHeroe</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
       <div class="modal-body">
         @for (superh of sh; track superh ; let i=$index) {
-        <app-modificarsh [Superheroe]="superh" [indice]="i"></app-modificarsh>
+        <app-modificarsh [Superheroe]="superh" [indice]="i" (newItemEvent)="addItem($event)"></app-modificarsh>
         }
       </div>
     </div>
   </div>
 </div>
-

@@ -13,6 +13,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { SuperheroesComponent } from '../superheroes/superheroes.component';
 import { routes } from '../../app.routes';
 import { ModificarshComponent } from '../modificarsh/modificarsh.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalles',
@@ -22,12 +23,12 @@ import { ModificarshComponent } from '../modificarsh/modificarsh.component';
   styleUrl: './detalles.component.css'
 })
 export class DetallesComponent implements OnInit {
-
+  // declaración de atributos y variables.
   superheroes: Superheroe[] = [];
 
   @Input() id?: string;
 
-  // declaración de atributos y variables.
+
   indice: number = 0;
 
   titulo: string = "Modificar SuperHeroe";
@@ -41,19 +42,29 @@ export class DetallesComponent implements OnInit {
 
   sh: Superheroe[] = [];
 
-  Superheroe: Superheroe = new Superheroe(0, '', '', '', '', '', '');
+  superh: Superheroe = new Superheroe(0, '', '', '', '', '', '');
 
   constructor(private route: ActivatedRoute, private servicesh: ServiceSHService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.indice = this.route.snapshot.params['id'];
     this.buscarSH(this.indice);
-    this.superheroe = this.Superheroe.superheroe;
+    this.superheroe = this.superh.superheroe;
   }
 
   buscarSH(indice: number): void {
     this.servicesh.encontrarSuperHeroe(indice).subscribe(data => { this.sh = data });
 
+  }
+
+
+  addItem(newItem: Superheroe) {
+    this.sh[0].actor_principal = newItem.actor_principal;
+    this.sh[0].editor = newItem.editor;
+    this.sh[0].imagen = newItem.imagen;
+    this.sh[0].personajes = newItem.personajes;
+    this.sh[0].superheroe = newItem.superheroe;
+    this.sh[0].tematica = newItem.tematica;
   }
 
   //==========================================================================================================
@@ -62,10 +73,33 @@ export class DetallesComponent implements OnInit {
   eliminar(): void {
     let obs$ = new Observable<Superheroe>;
     obs$ = this.servicesh.eliminarSH(this.indice);
-    obs$.subscribe(data => { this.Superheroe = data });
+    obs$.subscribe(data => { this.superh = data });
     this.volverMostrarSH();
-    alert(this.indice);
   }
+
+  //METODO PARA CONFIRMAR ELIMINAR UN SUPERHEROE
+
+  confirEliminar() {
+    Swal.fire({
+      title: "Esta seguro que desea eliminar?",
+      text: "No podrá revertir esto!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si deseo eliminar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.eliminar();
+        Swal.fire({
+          title: "Eliminado!",
+          text: "Se ha eliminado satisfactoriamente",
+          icon: "success"
+        });
+      }
+    });
+  }
+
 
   volverMostrarSH() {
     this.router.navigate(['/mostrarSH']);
@@ -107,8 +141,5 @@ export class DetallesComponent implements OnInit {
     return this.formSH.get('personajes') as FormControl;
   }
   //==========================================================================================================
-
-  
-
 
 }

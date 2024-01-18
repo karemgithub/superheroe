@@ -30,12 +30,6 @@ export class ServiceSHService {
     //ENCONTRAR UN SUPERHEROE
     //==========================================================================================================
 
-    // getSuperheroeid(id: number): Observable<Superheroe> {
-    //     let direccion = this.url + id;
-    //     return this.http.get<Superheroe>(direccion)
-    // }
-
-
     encontrarSuperHeroe(index: number): Observable<Superheroe[]> {
         const params = new HttpParams().set("id", index)
         return this.http.get<Superheroe[]>("http://localhost:3000/Superheroes", { params });
@@ -63,7 +57,6 @@ export class ServiceSHService {
     eliminarSH(index: number): Observable<Superheroe> {
         let id: number = Number(index);
         let miurl = "http://localhost:3000/Superheroes/" + id;
-        alert(miurl);
         return this.http.delete<Superheroe>(miurl);
     }
 
